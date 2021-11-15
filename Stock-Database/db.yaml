@@ -1,0 +1,4 @@
+PGHOST: localhost
+PGDATABASE: stockdatabase
+PGUSER: postgres
+PGPASSWORD: postgres
