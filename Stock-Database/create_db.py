@@ -70,9 +70,11 @@ if __name__ == "__main__":
     except:
         print("Daily prices table is not created")
 
-    # create first csv 
-    tickers = ["AAPL", "GOOG", "TSLA"]
-    start = datetime(2021,1,1)
+    # create first csv
+    tickers = ["AAPL", "GOOG", "TSLA","FB",
+                "NFLX","AMZN","JNJ","GGPI",
+                "SHOP","AOS","BK"]
+    start = datetime(2020,1,1)
     today = date.today()
-    end = today - timedelta(days=4)
+    end = today - timedelta(days=1)
     crawl_stock(tickers, start=start, end=end)
