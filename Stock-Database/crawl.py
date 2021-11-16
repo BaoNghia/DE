@@ -2,10 +2,9 @@
 import os
 import numpy as np
 import pandas as pd
-from datetime import datetime, date, timedelta
+# Data Source
 import yfinance as yf
-## Data viz
-# import plotly.graph_objs as go
+from datetime import datetime, date, timedelta
 
 
 def crawl_stock(tickers, start, end, origin_path = "./data/bars"):
@@ -25,9 +24,12 @@ def crawl_stock(tickers, start, end, origin_path = "./data/bars"):
             pass
 
 if __name__ == "__main__":
-    tickers = ["AAPL", "GOOG", "TSLA"]
-    start = datetime(2021,1,1)
+    tickers = ["AAPL", "GOOG", "TSLA","FB",
+                "NFLX","AMZN","JNJ","GGPI",
+                "SHOP","AOS","BK"]
+    start ="2020-01-01"
     today = date.today()
-    start = today - timedelta(days=4)
-    end = today - timedelta(days=3)
-    crawl_stock(tickers, start=start, end=end)
+    yesterday = today - timedelta(days=1)
+    crawl_stock(tickers, start, yesterday)
+
+    # print(yf.Ticker(tickers).history(start ="2021-01-01", end="2021-10-31" , interval='1h'))
