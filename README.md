@@ -40,6 +40,7 @@ Finally, create cronjob to shedule time to crawl and import to PostgreSQL databa
 ```bash
 $ cd
 $ crontab -e
+# insert texts below and save
 0 12 * * * cd ~/DE/Stock-Database && bash make_dataset.sh
 ```
 
